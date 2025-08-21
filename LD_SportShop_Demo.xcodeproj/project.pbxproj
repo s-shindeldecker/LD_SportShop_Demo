@@ -47,6 +47,12 @@
 		2BB607DD2E57781100744D27 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607D52E57781100744D27 /* ProductListView.swift */; };
 		2BB607DE2E57781100744D27 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607D32E57781100744D27 /* ProductCardView.swift */; };
 		2BB607E52E579CDC00744D27 /* LaunchDarkly in Frameworks */ = {isa = PBXBuildFile; productRef = 2BB607E42E579CDC00744D27 /* LaunchDarkly */; };
+		2BB607E72E57B8B300744D27 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BB607E62E57B8B300744D27 /* Config.plist */; };
+		2BB607E82E57B8B300744D27 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BB607E62E57B8B300744D27 /* Config.plist */; };
+		2BB607E92E57B8B300744D27 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2BB607E62E57B8B300744D27 /* Config.plist */; };
+		2BB607EB2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
+		2BB607EC2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
+		2BB607ED2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,8 @@
 		2BB607D42E57781100744D27 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		2BB607D52E57781100744D27 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		2BB607E12E57796C00744D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB607E62E57B8B300744D27 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -128,6 +136,7 @@
 		2BB607572E5771EC00744D27 = {
 			isa = PBXGroup;
 			children = (
+				2BB607E62E57B8B300744D27 /* Config.plist */,
 				2BB607E12E57796C00744D27 /* Info.plist */,
 				2BB6078B2E57739B00744D27 /* Sources */,
 				2BB607712E5771EE00744D27 /* LD_SportShop_DemoTests */,
@@ -233,6 +242,7 @@
 		2BB607952E57740900744D27 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */,
 				2BB607972E57741800744D27 /* LaunchDarkly */,
 				2BB607962E57741100744D27 /* Analytics */,
 			);
@@ -383,6 +393,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB607E92E57B8B300744D27 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +401,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB607E72E57B8B300744D27 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB607E82E57B8B300744D27 /* Config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +424,7 @@
 				2BB607C12E57762B00744D27 /* AnalyticsService.swift in Sources */,
 				2BB6079C2E57750000744D27 /* LDShopDemoApp.swift in Sources */,
 				2BB607B22E5775D800744D27 /* Product.swift in Sources */,
+				2BB607EC2E57B9FE00744D27 /* ConfigurationService.swift in Sources */,
 				2BB607AD2E57757E00744D27 /* HomeView.swift in Sources */,
 				2BB6079D2E57750000744D27 /* AppTheme.swift in Sources */,
 				2BB607D12E57780200744D27 /* SampleProducts.swift in Sources */,
@@ -437,6 +451,7 @@
 				2BB607DC2E57781100744D27 /* ProductDetailView.swift in Sources */,
 				2BB607DD2E57781100744D27 /* ProductListView.swift in Sources */,
 				2BB607DE2E57781100744D27 /* ProductCardView.swift in Sources */,
+				2BB607ED2E57B9FE00744D27 /* ConfigurationService.swift in Sources */,
 				2BB607A62E57750000744D27 /* AppRouter.swift in Sources */,
 				2BB607AA2E57754C00744D27 /* Route.swift in Sources */,
 				2BB607A72E57750000744D27 /* AppState.swift in Sources */,
@@ -460,6 +475,7 @@
 				2BB607AF2E57757E00744D27 /* HomeView.swift in Sources */,
 				2BB607AB2E57754C00744D27 /* Route.swift in Sources */,
 				2BB607C72E57764300744D27 /* LDService.swift in Sources */,
+				2BB607EB2E57B9FE00744D27 /* ConfigurationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

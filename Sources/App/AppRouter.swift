@@ -23,5 +23,13 @@ final class AppRouter {
             "brand": product.brand,
             "source": source ?? "list"
         ])
+            // LaunchDarkly tracking
+    LDService.shared.track(event: "product_selected", properties: [
+        "product_id": product.id.uuidString,
+        "product_name": product.name,
+        "product_brand": product.brand,
+        "product_price": product.price.description,
+        "source": source ?? "list"
+    ])
     }
 }

@@ -24,4 +24,20 @@ final class LDService: ObservableObject {
         guard let client else { return defaultValue }
         return client.variation(forKey: key, defaultValue: defaultValue)
     }
+
+   func track(event: String, properties: [String: Any] = [:]) {
+        guard let client else { 
+            print("LaunchDarkly: Cannot track event '\(event)' - client not initialized")
+            return 
+        }
+        
+        // Convert all properties to strings for simplicity
+        var ldProperties: [String: LDValue] = [:]
+        for (key, value) in properties {
+            ldProperties[key] = LDValue.string("\(value)")
+        }
+        
+        client.track(key: event, data: LDValue.object(ldProperties))
+        print("LaunchDarkly: Tracked event '\(event)' with properties: \(properties)")
+    }
 }
