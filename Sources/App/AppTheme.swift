@@ -1,7 +1,7 @@
 import SwiftUI
 
 enum AppTheme {
-    static let COMPANY_NAME = "SportFlex Pro"
+    static let COMPANY_NAME = ConfigurationService.shared.companyName
     
     enum Color {
         static let primaryGreen = SwiftUI.Color(red: 0.0, green: 0.45, blue: 0.28)

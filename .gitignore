@@ -44,7 +44,7 @@ playground.xcworkspace
 
 # Carthage
 #
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Add this line if you want to avoid checking into source code from Carthage dependencies.
 # Carthage/Checkouts
 
 Carthage/Build/
@@ -60,3 +60,7 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# LaunchDarkly Configuration
+# This file contains sensitive API keys and should not be committed to version control
+Config.plist

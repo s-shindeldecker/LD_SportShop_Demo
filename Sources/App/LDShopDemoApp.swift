@@ -9,10 +9,8 @@ struct LDShopDemoApp: App {
             RootView()
                 .environmentObject(appState)
                 .task {
-                    // TODO: Replace with your actual LaunchDarkly mobile key
-                    // You can get this from your LaunchDarkly dashboard under Settings > Keys
-                    // For development, you can also set this via environment variables or configuration
-                    LDService.shared.start(mobileKey: "YOUR_MOBILE_KEY")
+                    // Initialize LaunchDarkly with the configured mobile key from Config.plist
+                    LDService.shared.start(mobileKey: ConfigurationService.shared.launchDarklyMobileKey)
                 }
         }
     }
