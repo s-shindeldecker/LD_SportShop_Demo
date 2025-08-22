@@ -39,7 +39,7 @@ playground.xcworkspace
 #
 # Pods/
 #
-# Add this line if you want to avoid checking in source code from the Xcode workspace
+# Add this line if you want to avoid checking into source code from the Xcode workspace
 # *.xcworkspace
 
 # Carthage
@@ -64,3 +64,12 @@ fastlane/test_output
 # LaunchDarkly Configuration
 # This file contains sensitive API keys and should not be committed to version control
 Config.plist
+
+# CDN and Image Assets
+# Large image files and CDN content should not be committed to version control
+CDN/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp

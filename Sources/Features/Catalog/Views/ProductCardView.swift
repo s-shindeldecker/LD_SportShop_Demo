@@ -3,6 +3,7 @@ import SwiftUI
 struct ProductCardView: View {
     let product: Product
     let onTap: (Product) -> Void
+    @StateObject private var imageService = ProductImageService.shared
     
     var body: some View {
         Button(action: { onTap(product) }) {
@@ -12,9 +13,8 @@ struct ProductCardView: View {
                     .shadow(radius: 1, y: 1)
                 
                 VStack(alignment: .leading, spacing: AppTheme.Spacing.s) {
-                    Image(systemName: product.imageName)
-                        .resizable()
-                        .scaledToFit()
+                    // Use the image service instead of direct Image
+                    imageService.getProductImage(for: product, size: "card")
                         .frame(height: 120)
                         .frame(maxWidth: .infinity)
                         .padding(.top, AppTheme.Spacing.l)

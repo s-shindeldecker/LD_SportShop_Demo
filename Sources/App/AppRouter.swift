@@ -17,19 +17,29 @@ final class AppRouter {
     func showProduct(_ product: Product, from source: String? = nil) {
         appState.selectedProduct = product
         appState.path.append(.product(product))
+        
+        // Track feature flag usage
+        let enhancedImagesEnabled = LDService.shared.variation(
+            forKey: "enhanced-product-images", 
+            defaultValue: false
+        )
+        
+        // Analytics tracking
         AnalyticsService.shared.track(event: "product_card_tap", props: [
             "id": product.id.uuidString,
             "name": product.name,
             "brand": product.brand,
             "source": source ?? "list"
         ])
-            // LaunchDarkly tracking
-    LDService.shared.track(event: "product_selected", properties: [
-        "product_id": product.id.uuidString,
-        "product_name": product.name,
-        "product_brand": product.brand,
-        "product_price": product.price.description,
-        "source": source ?? "list"
-    ])
+        
+        // LaunchDarkly tracking with feature flag state
+        LDService.shared.track(event: "product_selected", properties: [
+            "product_id": product.id.uuidString,
+            "product_name": product.name,
+            "product_brand": product.brand,
+            "product_price": product.price.description,
+            "source": source ?? "list",
+            "enhanced_images_enabled": enhancedImagesEnabled // Track flag state
+        ])
     }
 }

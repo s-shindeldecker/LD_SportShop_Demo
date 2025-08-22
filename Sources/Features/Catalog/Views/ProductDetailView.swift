@@ -2,13 +2,13 @@ import SwiftUI
 
 struct ProductDetailView: View {
     let product: Product
+    @StateObject private var imageService = ProductImageService.shared
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: AppTheme.Spacing.l) {
-                Image(systemName: product.imageName)
-                    .resizable()
-                    .scaledToFit()
+                // Use the image service for enhanced product images
+                imageService.getProductImage(for: product, size: "detail")
                     .frame(height: 220)
                     .frame(maxWidth: .infinity)
                 
