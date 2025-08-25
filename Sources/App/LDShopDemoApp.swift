@@ -12,6 +12,7 @@ struct LDShopDemoApp: App {
                     // Initialize LaunchDarkly with the configured mobile key from Config.plist
                     LDService.shared.start(mobileKey: ConfigurationService.shared.launchDarklyMobileKey)
                 }
+
         }
     }
 }
@@ -23,10 +24,6 @@ struct RootView: View {
         NavigationStack(path: $appState.path) {
             HomeView(router: AppRouter(appState: appState))
                 .navigationTitle(AppTheme.COMPANY_NAME)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(AppTheme.Color.primaryGreen, for: .navigationBar)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarColorScheme(.dark, for: .navigationBar)
                 .background(AppTheme.Color.background)
                 .navigationDestination(for: Route.self) { route in
                     switch route {

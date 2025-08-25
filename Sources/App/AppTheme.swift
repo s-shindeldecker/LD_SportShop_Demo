@@ -5,8 +5,8 @@ enum AppTheme {
     
     enum Color {
         static let primaryGreen = SwiftUI.Color(red: 0.0, green: 0.45, blue: 0.28)
-        static let background = SwiftUI.Color(.systemGroupedBackground)
-        static let cardBackground = SwiftUI.Color(.secondarySystemBackground)
+        static let background = SwiftUI.Color.secondary.opacity(0.1)
+        static let cardBackground = SwiftUI.Color.secondary.opacity(0.05)
         static let textPrimary = SwiftUI.Color.primary
         static let textSecondary = SwiftUI.Color.secondary
     }
