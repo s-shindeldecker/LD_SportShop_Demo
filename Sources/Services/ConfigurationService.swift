@@ -113,13 +113,16 @@ final class ProductImageService: ObservableObject {
             defaultValue: false
         )
         
-        // Debug logging for flag evaluation
+        // Enhanced debug logging for flag evaluation
         print("🔍 ProductImageService: Flag 'enhanced-product-images' = \(enhancedImagesEnabled) for user: \(LDService.shared.currentUserKey)")
+        print("🔍 ProductImageService: Requesting image for product: \(product.name) (\(product.brand)) with size: \(size)")
+        print("🔍 ProductImageService: Product ID: \(product.id.uuidString)")
         
         if enhancedImagesEnabled, let imageURL = productImageMap[product.id.uuidString] {
             // Enhanced image available - use network URL
             let sizedURL = getSizedImageURL(baseURL: imageURL, size: size)
             print("🖼️ ProductImageService: Using enhanced image for \(product.name): \(sizedURL)")
+            print("🖼️ ProductImageService: Original URL from config: \(imageURL)")
             
             return AnyView(
                 AsyncImage(url: URL(string: sizedURL)) { image in
@@ -138,6 +141,13 @@ final class ProductImageService: ObservableObject {
         
         // Fallback to generic icon
         print("🎯 ProductImageService: Using generic icon for \(product.name)")
+        print("🎯 ProductImageService: Enhanced images enabled: \(enhancedImagesEnabled)")
+        if let imageURL = productImageMap[product.id.uuidString] {
+            print("🎯 ProductImageService: Image URL exists in config: \(imageURL)")
+        } else {
+            print("🎯 ProductImageService: No image URL found in config for product ID: \(product.id.uuidString)")
+        }
+        
         return AnyView(
             Image(systemName: product.imageName)
                 .resizable()
