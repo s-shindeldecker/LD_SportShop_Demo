@@ -5,7 +5,7 @@ struct ProductListView: View {
     private let columns = [GridItem(.adaptive(minimum: 160), spacing: AppTheme.Spacing.l)]
     
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: true) {
             LazyVGrid(columns: columns, spacing: AppTheme.Spacing.l) {
                 ForEach(SampleProducts.all) { product in
                     ProductCardView(product: product) { tapped in
@@ -15,9 +15,13 @@ struct ProductListView: View {
             }
             .padding(.horizontal, AppTheme.Spacing.l)
             .padding(.vertical, AppTheme.Spacing.l)
+            
+            // Add extra bottom padding to ensure all content is scrollable
+            Spacer(minLength: AppTheme.Spacing.xl)
         }
         .background(AppTheme.Color.background.ignoresSafeArea())
         .navigationTitle("Running Shoes")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 
