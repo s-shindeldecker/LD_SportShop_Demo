@@ -78,14 +78,14 @@ final class LDService: ObservableObject {
         // Debug logging to see exactly what we're getting
         print("🔍 LaunchDarkly: Boolean flag '\(key)' raw value: \(rawValue), type: \(type(of: rawValue)) for user: \(currentUserKey)")
         
-        // TODO: The issue is that LaunchDarkly is returning variation: Optional(1) but we're converting it to false
-        // This suggests either:
-        // 1. The flag value is actually true (1) but we're not handling it correctly, OR
-        // 2. There's a conversion issue in our code
-        // 3. LaunchDarkly is seeing all users as the same anonymous user
-        
-        // Ensure we return the correct boolean value
-        return rawValue
+        // LaunchDarkly should return Bool values directly
+        if let boolValue = rawValue as? Bool {
+            print("✅ LaunchDarkly: Successfully got Bool value: \(boolValue)")
+            return boolValue
+        } else {
+            print("⚠️ LaunchDarkly: Unexpected type \(type(of: rawValue)), using defaultValue: \(defaultValue)")
+            return defaultValue
+        }
     }
     
     // Method to set user attributes that LaunchDarkly can use for targeting
