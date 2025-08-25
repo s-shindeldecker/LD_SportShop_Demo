@@ -9,13 +9,15 @@ final class LDService: ObservableObject {
     @Published private(set) var currentUserKey: String = "default-user"
     private(set) var client: LDClient?
     
+    // Start LaunchDarkly service with a new random user context
     func start(mobileKey: String) {
-        guard client == nil else { return }
+        // Generate a new random user ID for this app session
+        let sessionUserId = "session-\(UUID().uuidString.prefix(8))"
         
-        // Generate a new unique user ID for each app session
-        // This ensures LaunchDarkly sees different users for experiments
-        let newUserKey = "session-\(UUID().uuidString.prefix(8))"
-        startWithUserContext(userKey: newUserKey)
+        print("🚀 LaunchDarkly: Starting with user context: \(sessionUserId)")
+        
+        // Start with the new random user context
+        startWithUserContext(userKey: sessionUserId)
     }
     
     private func startWithUserContext(userKey: String) {
@@ -107,24 +109,15 @@ final class LDService: ObservableObject {
         "user-jack-010"
     ]
     
-    // Generate a new user context when app lifecycle changes
-    // This ensures LaunchDarkly sees different users for experiments
+    // Generate a new random user context for LaunchDarkly experiments
     func generateNewUserContext() {
-        let newUserKey = predefinedUsers.randomElement() ?? "user-\(UUID().uuidString.prefix(8))"
+        // Generate a random user ID for new user simulation
+        let randomUserId = "random-user-\(UUID().uuidString.prefix(8))"
         
-        print("🔄 LaunchDarkly: Generated new user context: \(newUserKey)")
+        print("🔄 LaunchDarkly: Generating new random user: \(randomUserId)")
         
-        // Store the new user key
-        self.currentUserKey = String(newUserKey)
-        
-        // Identify the new user to LaunchDarkly
-        identifyUser(userKey: String(newUserKey))
-        
-        // Notify observers that context changed
-        self.objectWillChange.send()
-        
-        // Also refresh the ProductImageService
-        ProductImageService.shared.refreshForNewUser()
+        // Switch to the new random user
+        switchToUser(userKey: randomUserId)
     }
     
     // Switch to a specific predefined user

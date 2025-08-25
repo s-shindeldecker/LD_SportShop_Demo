@@ -21,68 +21,68 @@ struct HomeView: View {
                 .buttonStyle(.plain)
             }
             
-                                Section(header: Text("LaunchDarkly Experiment Tools")) {
-                        VStack(alignment: .leading, spacing: AppTheme.Spacing.s) {
-                            HStack {
-                                Text("Current User:")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                Spacer()
-                                Text(ldService.currentUserKey)
-                                    .font(.caption)
-                                    .fontWeight(.medium)
-                                    .foregroundStyle(AppTheme.Color.primaryGreen)
-                            }
-                            
-                            Button(action: {
-                                ldService.generateNewUserContext()
-                            }) {
-                                HStack(spacing: AppTheme.Spacing.s) {
-                                    Image(systemName: "person.badge.plus")
-                                        .foregroundStyle(AppTheme.Color.primaryGreen)
-                                    Text("Switch to Random User")
-                                        .fontWeight(.medium)
-                                }
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, AppTheme.Spacing.s)
-                                .background(AppTheme.Color.primaryGreen.opacity(0.1))
-                                .cornerRadius(8)
-                            }
-                            .buttonStyle(.plain)
-                            .disabled(!ldService.isReady)
-                            
-                            VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
-                                Text("Or pick a specific user:")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                                
-                                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: AppTheme.Spacing.xs) {
-                                    ForEach(ldService.predefinedUsers, id: \.self) { userKey in
-                                        Button(action: {
-                                            ldService.switchToUser(userKey: userKey)
-                                        }) {
-                                            Text(userKey.suffix(3))
-                                                .font(.caption2)
-                                                .fontWeight(.medium)
-                                                .padding(.horizontal, 8)
-                                                .padding(.vertical, 4)
-                                                .background(userKey == ldService.currentUserKey ? AppTheme.Color.primaryGreen : AppTheme.Color.primaryGreen.opacity(0.1))
-                                                .foregroundStyle(userKey == ldService.currentUserKey ? .white : AppTheme.Color.primaryGreen)
-                                                .cornerRadius(6)
-                                        }
-                                        .buttonStyle(.plain)
-                                        .disabled(!ldService.isReady)
-                                    }
-                                }
-                            }
-                            
-                            Text("Each user gets a fresh LaunchDarkly context for experiments")
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
-                                .multilineTextAlignment(.center)
-                        }
-                        .padding(.vertical, AppTheme.Spacing.xs)
+            Section(header: Text("🧪 LaunchDarkly Experiment Tools")) {
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.m) {
+                    Text("Current User: \(ldService.currentUserKey)")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal)
+                        .padding(.vertical, 4)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(4)
+                    
+                    // Simulate New User Button
+                    Button(action: {
+                        ldService.generateNewUserContext()
+                    }) {
+                        Text("🎲 Generate Random User")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
                     }
+                    .padding(.horizontal)
+                    
+                    Text("Click to generate a completely new random user ID for LaunchDarkly experiments")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                    
+                    VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
+                        Text("Or pick a specific user:")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: AppTheme.Spacing.xs) {
+                            ForEach(ldService.predefinedUsers, id: \.self) { userKey in
+                                Button(action: {
+                                    ldService.switchToUser(userKey: userKey)
+                                }) {
+                                    Text(userKey.suffix(3))
+                                        .font(.caption2)
+                                        .fontWeight(.medium)
+                                        .padding(.horizontal, 8)
+                                        .padding(.vertical, 4)
+                                        .background(userKey == ldService.currentUserKey ? AppTheme.Color.primaryGreen : AppTheme.Color.primaryGreen.opacity(0.1))
+                                        .foregroundStyle(userKey == ldService.currentUserKey ? .white : AppTheme.Color.primaryGreen)
+                                        .cornerRadius(6)
+                                }
+                                .buttonStyle(.plain)
+                                .disabled(!ldService.isReady)
+                            }
+                        }
+                    }
+                    
+                    Text("Each user gets a fresh LaunchDarkly context for experiments")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.vertical, AppTheme.Spacing.xs)
+            }
         }
         .listStyle(.sidebar)
         .background(AppTheme.Color.background)
