@@ -137,22 +137,22 @@ final class ProductImageService: ObservableObject {
                         .foregroundColor(.secondary)
                 }
             )
-        }
-        
-        // Fallback to generic icon
-        print("🎯 ProductImageService: Using generic icon for \(product.name)")
-        print("🎯 ProductImageService: Enhanced images enabled: \(enhancedImagesEnabled)")
-        if let imageURL = productImageMap[product.id.uuidString] {
-            print("🎯 ProductImageService: Image URL exists in config: \(imageURL)")
         } else {
-            print("🎯 ProductImageService: No image URL found in config for product ID: \(product.id.uuidString)")
+            // Fallback to generic icon
+            print("🎯 ProductImageService: Using generic icon for \(product.name)")
+            print("🎯 ProductImageService: Enhanced images enabled: \(enhancedImagesEnabled)")
+            if let imageURL = productImageMap[product.id.uuidString] {
+                print("🎯 ProductImageService: Image URL exists in config: \(imageURL)")
+            } else {
+                print("🎯 ProductImageService: No image URL found in config for product ID: \(product.id.uuidString)")
+            }
+            
+            return AnyView(
+                Image(systemName: product.imageName)
+                    .resizable()
+                    .scaledToFit()
+            )
         }
-        
-        return AnyView(
-            Image(systemName: product.imageName)
-                .resizable()
-                .scaledToFit()
-        )
     }
     
     private func getSizedImageURL(baseURL: String, size: String) -> String {
