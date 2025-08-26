@@ -161,11 +161,11 @@ struct CategoryCard: View {
         case .productList:
             ProductListView(router: AppRouter(appState: AppState()))
         case .apparel:
-            PlaceholderView(title: "Apparel", subtitle: "Coming Soon")
+            ApparelListView()
         case .equipment:
-            PlaceholderView(title: "Equipment", subtitle: "Coming Soon")
+            EquipmentListView()
         case .accessories:
-            PlaceholderView(title: "Accessories", subtitle: "Coming Soon")
+            AccessoriesListView()
         default:
             ProductListView(router: AppRouter(appState: AppState()))
         }

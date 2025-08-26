@@ -53,6 +53,42 @@
 		2BB607EB2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
 		2BB607EC2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
 		2BB607ED2E57B9FE00744D27 /* ConfigurationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */; };
+		2BB608742E5E07FE00744D27 /* ApparelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608732E5E07FE00744D27 /* ApparelItem.swift */; };
+		2BB608752E5E07FE00744D27 /* ApparelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608732E5E07FE00744D27 /* ApparelItem.swift */; };
+		2BB608762E5E07FE00744D27 /* ApparelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608732E5E07FE00744D27 /* ApparelItem.swift */; };
+		2BB608782E5E080F00744D27 /* SampleApparel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608772E5E080F00744D27 /* SampleApparel.swift */; };
+		2BB608792E5E080F00744D27 /* SampleApparel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608772E5E080F00744D27 /* SampleApparel.swift */; };
+		2BB6087A2E5E080F00744D27 /* SampleApparel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608772E5E080F00744D27 /* SampleApparel.swift */; };
+		2BB6087D2E5E082200744D27 /* ApparelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087B2E5E082200744D27 /* ApparelCardView.swift */; };
+		2BB6087E2E5E082200744D27 /* ApparelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087C2E5E082200744D27 /* ApparelListView.swift */; };
+		2BB6087F2E5E082200744D27 /* ApparelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087B2E5E082200744D27 /* ApparelCardView.swift */; };
+		2BB608802E5E082200744D27 /* ApparelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087C2E5E082200744D27 /* ApparelListView.swift */; };
+		2BB608812E5E082200744D27 /* ApparelCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087B2E5E082200744D27 /* ApparelCardView.swift */; };
+		2BB608822E5E082200744D27 /* ApparelListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB6087C2E5E082200744D27 /* ApparelListView.swift */; };
+		2BB608872E5E084900744D27 /* EquipmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608852E5E084900744D27 /* EquipmentListView.swift */; };
+		2BB608882E5E084900744D27 /* EquipmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608842E5E084900744D27 /* EquipmentItem.swift */; };
+		2BB608892E5E084900744D27 /* EquipmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608832E5E084900744D27 /* EquipmentCardView.swift */; };
+		2BB6088A2E5E084900744D27 /* SampleEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608862E5E084900744D27 /* SampleEquipment.swift */; };
+		2BB6088B2E5E084900744D27 /* EquipmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608852E5E084900744D27 /* EquipmentListView.swift */; };
+		2BB6088C2E5E084900744D27 /* EquipmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608842E5E084900744D27 /* EquipmentItem.swift */; };
+		2BB6088D2E5E084900744D27 /* EquipmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608832E5E084900744D27 /* EquipmentCardView.swift */; };
+		2BB6088E2E5E084900744D27 /* SampleEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608862E5E084900744D27 /* SampleEquipment.swift */; };
+		2BB6088F2E5E084900744D27 /* EquipmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608852E5E084900744D27 /* EquipmentListView.swift */; };
+		2BB608902E5E084900744D27 /* EquipmentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608842E5E084900744D27 /* EquipmentItem.swift */; };
+		2BB608912E5E084900744D27 /* EquipmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608832E5E084900744D27 /* EquipmentCardView.swift */; };
+		2BB608922E5E084900744D27 /* SampleEquipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608862E5E084900744D27 /* SampleEquipment.swift */; };
+		2BB608972E5E089300744D27 /* SampleAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608962E5E089300744D27 /* SampleAccessories.swift */; };
+		2BB608982E5E089300744D27 /* AccessoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608952E5E089300744D27 /* AccessoryItem.swift */; };
+		2BB608992E5E089300744D27 /* AccessoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608932E5E089300744D27 /* AccessoriesListView.swift */; };
+		2BB6089A2E5E089300744D27 /* AccessoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608942E5E089300744D27 /* AccessoryCardView.swift */; };
+		2BB6089B2E5E089300744D27 /* SampleAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608962E5E089300744D27 /* SampleAccessories.swift */; };
+		2BB6089C2E5E089300744D27 /* AccessoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608952E5E089300744D27 /* AccessoryItem.swift */; };
+		2BB6089D2E5E089300744D27 /* AccessoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608932E5E089300744D27 /* AccessoriesListView.swift */; };
+		2BB6089E2E5E089300744D27 /* AccessoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608942E5E089300744D27 /* AccessoryCardView.swift */; };
+		2BB6089F2E5E089300744D27 /* SampleAccessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608962E5E089300744D27 /* SampleAccessories.swift */; };
+		2BB608A02E5E089300744D27 /* AccessoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608952E5E089300744D27 /* AccessoryItem.swift */; };
+		2BB608A12E5E089300744D27 /* AccessoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608932E5E089300744D27 /* AccessoriesListView.swift */; };
+		2BB608A22E5E089300744D27 /* AccessoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB608942E5E089300744D27 /* AccessoryCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +128,18 @@
 		2BB607E12E57796C00744D27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BB607E62E57B8B300744D27 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		2BB607EA2E57B9FE00744D27 /* ConfigurationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationService.swift; sourceTree = "<group>"; };
+		2BB608732E5E07FE00744D27 /* ApparelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApparelItem.swift; sourceTree = "<group>"; };
+		2BB608772E5E080F00744D27 /* SampleApparel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleApparel.swift; sourceTree = "<group>"; };
+		2BB6087B2E5E082200744D27 /* ApparelCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApparelCardView.swift; sourceTree = "<group>"; };
+		2BB6087C2E5E082200744D27 /* ApparelListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApparelListView.swift; sourceTree = "<group>"; };
+		2BB608832E5E084900744D27 /* EquipmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCardView.swift; sourceTree = "<group>"; };
+		2BB608842E5E084900744D27 /* EquipmentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentItem.swift; sourceTree = "<group>"; };
+		2BB608852E5E084900744D27 /* EquipmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentListView.swift; sourceTree = "<group>"; };
+		2BB608862E5E084900744D27 /* SampleEquipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleEquipment.swift; sourceTree = "<group>"; };
+		2BB608932E5E089300744D27 /* AccessoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesListView.swift; sourceTree = "<group>"; };
+		2BB608942E5E089300744D27 /* AccessoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCardView.swift; sourceTree = "<group>"; };
+		2BB608952E5E089300744D27 /* AccessoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryItem.swift; sourceTree = "<group>"; };
+		2BB608962E5E089300744D27 /* SampleAccessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAccessories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -189,6 +237,18 @@
 		2BB6078F2E5773CD00744D27 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2BB608932E5E089300744D27 /* AccessoriesListView.swift */,
+				2BB608942E5E089300744D27 /* AccessoryCardView.swift */,
+				2BB608952E5E089300744D27 /* AccessoryItem.swift */,
+				2BB608962E5E089300744D27 /* SampleAccessories.swift */,
+				2BB608832E5E084900744D27 /* EquipmentCardView.swift */,
+				2BB608842E5E084900744D27 /* EquipmentItem.swift */,
+				2BB608852E5E084900744D27 /* EquipmentListView.swift */,
+				2BB608862E5E084900744D27 /* SampleEquipment.swift */,
+				2BB6087B2E5E082200744D27 /* ApparelCardView.swift */,
+				2BB6087C2E5E082200744D27 /* ApparelListView.swift */,
+				2BB608772E5E080F00744D27 /* SampleApparel.swift */,
+				2BB608732E5E07FE00744D27 /* ApparelItem.swift */,
 				2BB607912E5773DE00744D27 /* Catalog */,
 				2BB607902E5773D700744D27 /* Home */,
 			);
@@ -423,10 +483,22 @@
 				2BB607C62E57764300744D27 /* LDService.swift in Sources */,
 				2BB607C12E57762B00744D27 /* AnalyticsService.swift in Sources */,
 				2BB6079C2E57750000744D27 /* LDShopDemoApp.swift in Sources */,
+				2BB608762E5E07FE00744D27 /* ApparelItem.swift in Sources */,
+				2BB6088B2E5E084900744D27 /* EquipmentListView.swift in Sources */,
+				2BB6088C2E5E084900744D27 /* EquipmentItem.swift in Sources */,
+				2BB6088D2E5E084900744D27 /* EquipmentCardView.swift in Sources */,
+				2BB6088E2E5E084900744D27 /* SampleEquipment.swift in Sources */,
 				2BB607B22E5775D800744D27 /* Product.swift in Sources */,
+				2BB608972E5E089300744D27 /* SampleAccessories.swift in Sources */,
+				2BB608982E5E089300744D27 /* AccessoryItem.swift in Sources */,
+				2BB608992E5E089300744D27 /* AccessoriesListView.swift in Sources */,
+				2BB6089A2E5E089300744D27 /* AccessoryCardView.swift in Sources */,
+				2BB608782E5E080F00744D27 /* SampleApparel.swift in Sources */,
 				2BB607EC2E57B9FE00744D27 /* ConfigurationService.swift in Sources */,
 				2BB607AD2E57757E00744D27 /* HomeView.swift in Sources */,
 				2BB6079D2E57750000744D27 /* AppTheme.swift in Sources */,
+				2BB6087F2E5E082200744D27 /* ApparelCardView.swift in Sources */,
+				2BB608802E5E082200744D27 /* ApparelListView.swift in Sources */,
 				2BB607D12E57780200744D27 /* SampleProducts.swift in Sources */,
 				2BB607D62E57781100744D27 /* ProductDetailView.swift in Sources */,
 				2BB607D72E57781100744D27 /* ProductListView.swift in Sources */,
@@ -441,13 +513,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB608752E5E07FE00744D27 /* ApparelItem.swift in Sources */,
 				2BB607C52E57764300744D27 /* LDService.swift in Sources */,
 				2BB607C32E57762B00744D27 /* AnalyticsService.swift in Sources */,
+				2BB608872E5E084900744D27 /* EquipmentListView.swift in Sources */,
+				2BB608882E5E084900744D27 /* EquipmentItem.swift in Sources */,
+				2BB608892E5E084900744D27 /* EquipmentCardView.swift in Sources */,
+				2BB6088A2E5E084900744D27 /* SampleEquipment.swift in Sources */,
 				2BB607A42E57750000744D27 /* LDShopDemoApp.swift in Sources */,
 				2BB607B32E5775D800744D27 /* Product.swift in Sources */,
 				2BB607AE2E57757E00744D27 /* HomeView.swift in Sources */,
 				2BB607A52E57750000744D27 /* AppTheme.swift in Sources */,
+				2BB6089F2E5E089300744D27 /* SampleAccessories.swift in Sources */,
+				2BB608A02E5E089300744D27 /* AccessoryItem.swift in Sources */,
+				2BB608A12E5E089300744D27 /* AccessoriesListView.swift in Sources */,
+				2BB608A22E5E089300744D27 /* AccessoryCardView.swift in Sources */,
 				2BB607D22E57780200744D27 /* SampleProducts.swift in Sources */,
+				2BB6087D2E5E082200744D27 /* ApparelCardView.swift in Sources */,
+				2BB6087E2E5E082200744D27 /* ApparelListView.swift in Sources */,
 				2BB607DC2E57781100744D27 /* ProductDetailView.swift in Sources */,
 				2BB607DD2E57781100744D27 /* ProductListView.swift in Sources */,
 				2BB607DE2E57781100744D27 /* ProductCardView.swift in Sources */,
@@ -455,6 +538,7 @@
 				2BB607A62E57750000744D27 /* AppRouter.swift in Sources */,
 				2BB607AA2E57754C00744D27 /* Route.swift in Sources */,
 				2BB607A72E57750000744D27 /* AppState.swift in Sources */,
+				2BB608792E5E080F00744D27 /* SampleApparel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,16 +549,28 @@
 				2BB607A02E57750000744D27 /* LDShopDemoApp.swift in Sources */,
 				2BB607C22E57762B00744D27 /* AnalyticsService.swift in Sources */,
 				2BB607A12E57750000744D27 /* AppTheme.swift in Sources */,
+				2BB608742E5E07FE00744D27 /* ApparelItem.swift in Sources */,
 				2BB607B12E5775D800744D27 /* Product.swift in Sources */,
 				2BB607A22E57750000744D27 /* AppRouter.swift in Sources */,
 				2BB607D02E57780200744D27 /* SampleProducts.swift in Sources */,
 				2BB607A32E57750000744D27 /* AppState.swift in Sources */,
 				2BB607D92E57781100744D27 /* ProductDetailView.swift in Sources */,
+				2BB6087A2E5E080F00744D27 /* SampleApparel.swift in Sources */,
 				2BB607DA2E57781100744D27 /* ProductListView.swift in Sources */,
 				2BB607DB2E57781100744D27 /* ProductCardView.swift in Sources */,
 				2BB607AF2E57757E00744D27 /* HomeView.swift in Sources */,
+				2BB6088F2E5E084900744D27 /* EquipmentListView.swift in Sources */,
+				2BB608902E5E084900744D27 /* EquipmentItem.swift in Sources */,
+				2BB608912E5E084900744D27 /* EquipmentCardView.swift in Sources */,
+				2BB608922E5E084900744D27 /* SampleEquipment.swift in Sources */,
 				2BB607AB2E57754C00744D27 /* Route.swift in Sources */,
 				2BB607C72E57764300744D27 /* LDService.swift in Sources */,
+				2BB608812E5E082200744D27 /* ApparelCardView.swift in Sources */,
+				2BB608822E5E082200744D27 /* ApparelListView.swift in Sources */,
+				2BB6089B2E5E089300744D27 /* SampleAccessories.swift in Sources */,
+				2BB6089C2E5E089300744D27 /* AccessoryItem.swift in Sources */,
+				2BB6089D2E5E089300744D27 /* AccessoriesListView.swift in Sources */,
+				2BB6089E2E5E089300744D27 /* AccessoryCardView.swift in Sources */,
 				2BB607EB2E57B9FE00744D27 /* ConfigurationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
