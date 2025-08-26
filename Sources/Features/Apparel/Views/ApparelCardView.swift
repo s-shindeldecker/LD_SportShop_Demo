@@ -4,58 +4,50 @@ struct ApparelCardView: View {
     let item: ApparelItem
     
     var body: some View {
-        VStack(alignment: .leading, spacing: AppTheme.Spacing.s) {
-            // Simple icon instead of ProductImageService
-            Image(systemName: item.imageName)
-                .font(.system(size: 40))
-                .foregroundColor(.green)
-                .frame(maxWidth: .infinity)
-                .frame(height: 120)
-                .background(Color(.systemGray6))
-                .cornerRadius(AppTheme.Spacing.s)
-            
-            // Content
-            VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
-                Text(item.brand)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+        NavigationLink(destination: ApparelDetailView(item: item)) {
+            VStack(spacing: AppTheme.Spacing.m) {
+                // Product Image
+                Image(systemName: item.imageName)
+                    .font(.system(size: 40))
+                    .foregroundColor(.primary)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 120)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(AppTheme.Spacing.s)
                 
-                Text(item.name)
-                    .font(.headline)
-                    .fontWeight(.semibold)
-                    .lineLimit(2)
-                
-                Text(item.price.currencyString)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(.green)
-                
-                // Sizes and colors
-                HStack {
-                    Text("Sizes: \(item.sizes.joined(separator: ", "))")
-                        .font(.caption2)
+                // Product Info
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
+                    Text(item.brand)
+                        .font(.caption)
                         .foregroundColor(.secondary)
-                    Spacer()
+                        .textCase(.uppercase)
+                        .tracking(1)
+                    
+                    Text(item.name)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+                    
+                    Text("$\(String(format: "%.2f", item.price))")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.blue)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
-                HStack {
-                    Text("Colors: \(item.colors.joined(separator: ", "))")
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                    Spacer()
-                }
+                Spacer()
             }
-            .padding(.horizontal, AppTheme.Spacing.s)
-            .padding(.bottom, AppTheme.Spacing.s)
+            .padding(AppTheme.Spacing.m)
+            .background(Color(.systemBackground))
+            .cornerRadius(AppTheme.Spacing.m)
+            .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
         }
-        .background(Color(.systemBackground))
-        .cornerRadius(AppTheme.Spacing.m)
-        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
 #Preview {
-    ApparelCardView(item: SampleApparel.all[0])
-        .frame(width: 200, height: 300)
-        .padding()
+    ApparelCardView(item: SampleApparel.items[0])
 }
