@@ -88,26 +88,31 @@ final class ProductImageService: ObservableObject {
     }
     
     private func startObservingFlagChanges() {
-        // Observe the enhanced-product-images flag for changes
-        LDService.shared.client?.observe(keys: ["enhanced-product-images"], owner: self) { [weak self] changes in
+        // Safely observe the enhanced-product-images flag for changes
+        guard let client = LDService.shared.client else {
+            print("⚠️ ProductImageService: LaunchDarkly client not available")
+            return
+        }
+        
+        client.observe(keys: ["enhanced-product-images"], owner: self) { [weak self] changes in
             DispatchQueue.main.async {
                 print("🚀 LaunchDarkly: Flag 'enhanced-product-images' changed, refreshing UI...")
                 self?.objectWillChange.send()
             }
         }
         
-        // Also observe user context changes
+        // Also observe user context changes with better error handling
         LDService.shared.$currentUserKey
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                DispatchQueue.main.async {
-                    print("👤 LaunchDarkly: User context changed, refreshing UI...")
-                    self?.objectWillChange.send()
-                }
+                print("👤 LaunchDarkly: User context changed, refreshing UI...")
+                self?.objectWillChange.send()
             }
             .store(in: &cancellables)
     }
     
     func getProductImage(for product: Product, size: String = "card") -> some View {
+        // Safely get the flag value
         let enhancedImagesEnabled = LDService.shared.boolVariation(
             forKey: "enhanced-product-images", 
             defaultValue: false
@@ -125,16 +130,45 @@ final class ProductImageService: ObservableObject {
             print("🖼️ ProductImageService: Original URL from config: \(imageURL)")
             
             return AnyView(
-                AsyncImage(url: URL(string: sizedURL)) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    // Fallback to icon while loading
-                    Image(systemName: product.imageName)
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.secondary)
+                AsyncImage(url: URL(string: sizedURL)) { phase in
+                    switch phase {
+                    case .empty:
+                        // Show loading placeholder
+                        Image(systemName: product.imageName)
+                            .font(.system(size: 40))
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: size == "card" ? 120 : 200)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(size == "card" ? AppTheme.Spacing.s : 0)
+                    case .success(let image):
+                        // Show the loaded image
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: size == "card" ? 120 : 200)
+                            .clipped()
+                            .cornerRadius(size == "card" ? AppTheme.Spacing.s : 0)
+                    case .failure(_):
+                        // Show fallback icon on error
+                        Image(systemName: product.imageName)
+                            .font(.system(size: 40))
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: size == "card" ? 120 : 200)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(size == "card" ? AppTheme.Spacing.s : 0)
+                    @unknown default:
+                        // Handle any future cases
+                        Image(systemName: product.imageName)
+                            .font(.system(size: 40))
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity)
+                            .frame(height: size == "card" ? 120 : 200)
+                            .background(Color(.systemGray6))
+                            .cornerRadius(size == "card" ? AppTheme.Spacing.s : 0)
+                    }
                 }
             )
         } else {
@@ -149,8 +183,12 @@ final class ProductImageService: ObservableObject {
             
             return AnyView(
                 Image(systemName: product.imageName)
-                    .resizable()
-                    .scaledToFit()
+                    .font(.system(size: 40))
+                    .foregroundColor(.gray)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: size == "card" ? 120 : 200)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(size == "card" ? AppTheme.Spacing.s : 0)
             )
         }
     }
