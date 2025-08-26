@@ -22,15 +22,20 @@ struct RootView: View {
     
     var body: some View {
         NavigationStack(path: $appState.path) {
-            HomeView(router: AppRouter(appState: appState))
+            HomeView()
                 .navigationTitle(AppTheme.COMPANY_NAME)
                 .background(AppTheme.Color.background)
                 .navigationDestination(for: Route.self) { route in
                     switch route {
+                    case .catalog:
+                        ProductListView(router: AppRouter(appState: appState))
                     case .productList:
                         ProductListView(router: AppRouter(appState: appState))
                     case .product(let product):
                         ProductDetailView(product: product)
+                    case .apparel, .equipment, .accessories:
+                        // These will be handled by the HomeView's NavigationStack
+                        EmptyView()
                     }
                 }
         }
