@@ -1,7 +1,7 @@
 import Foundation
 
 final class AppRouter {
-    unowned let appState: AppState
+    let appState: AppState
     
     init(appState: AppState) { 
         self.appState = appState 

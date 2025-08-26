@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var ldService = LDService.shared
+    @EnvironmentObject private var appState: AppState
     
     var body: some View {
         NavigationStack {
@@ -78,7 +78,7 @@ struct HomeView: View {
                                 Text("Current User")
                                     .font(.caption2)
                                     .foregroundColor(.secondary)
-                                Text(ldService.currentUserKey)
+                                Text(LDService.shared.currentUserKey)
                                     .font(.caption)
                                     .fontWeight(.medium)
                                     .foregroundColor(.primary)
@@ -88,7 +88,7 @@ struct HomeView: View {
                             
                             // Random User Button (Small & Unobtrusive)
                             Button(action: {
-                                ldService.generateNewUserContext()
+                                LDService.shared.generateNewUserContext()
                             }) {
                                 Image(systemName: "dice")
                                     .font(.title2)
@@ -115,6 +115,8 @@ struct HomeView: View {
 }
 
 struct CategoryCard: View {
+    @EnvironmentObject private var appState: AppState
+    
     let title: String
     let subtitle: String
     let iconName: String
@@ -159,7 +161,7 @@ struct CategoryCard: View {
     private var destinationView: some View {
         switch destination {
         case .productList:
-            ProductListView(router: AppRouter(appState: AppState()))
+            ProductListView(router: AppRouter(appState: appState))
         case .apparel:
             ApparelListView()
         case .equipment:
@@ -167,7 +169,7 @@ struct CategoryCard: View {
         case .accessories:
             AccessoriesListView()
         default:
-            ProductListView(router: AppRouter(appState: AppState()))
+            ProductListView(router: AppRouter(appState: appState))
         }
     }
 }
@@ -203,4 +205,5 @@ struct PlaceholderView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(AppState())
 }
